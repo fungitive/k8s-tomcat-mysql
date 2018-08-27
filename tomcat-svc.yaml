@@ -5,8 +5,9 @@ metadata:
 spec:
   type: NodePort
   ports:
-  - name: "vote-service"
+  - name: tomcat-example
     port: 8080
+    protocol: TCP
     targetPort: 8080
     nodePort: 31001
   selector:
