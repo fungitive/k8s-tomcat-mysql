@@ -13,6 +13,7 @@ spec:
       containers:
       - image: tomcat:9.0
         name: tomcat
+        containerPort: 8080
         volumeMounts:
         - mountPath: /usr/local/tomcat/webapps
           name: tomcat-dir
