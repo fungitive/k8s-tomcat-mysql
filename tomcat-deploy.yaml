@@ -1,0 +1,22 @@
+
+apiVersion: extensions/v1beta1
+kind: Deployment
+metadata:
+  name: tomcat-example
+spec:
+  replicas: 2
+  template:
+    metadata:
+      labels:
+        app: tomcat-example
+    spec:
+      containers:
+      - image: tomcat:9.4
+        name: tomcat
+        volumeMounts:
+        - mountPath: /usr/local/tomcat/webapps
+          name: tomcat-dir
+      volumes:
+      - name: tomcat-dir
+        hostPath:
+          path: /root/tomcat
